@@ -22,3 +22,11 @@ echo $row['title'];
 while ($row = $statement-> fetch(PDO::FETCH_OBJ)) {
 echo $row-> title;
 }
+
+//-> is used to call a method on the object of a class
+
+//=> is used to assign values to the keys of an array
+
+//E.g.:
+
+//$ages = array("Peter"=>32, "Quagmire"=>30, "Joe"=>34, 1=>2); 
