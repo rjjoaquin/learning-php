@@ -51,3 +51,4 @@ echo $payer -> getCustomer(321);
 
 //abstract
 //only extend classes from it, it can't be used in its own.
+//static does not change
