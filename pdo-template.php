@@ -30,3 +30,28 @@ echo $row-> title;
 //E.g.:
 
 //$ages = array("Peter"=>32, "Quagmire"=>30, "Joe"=>34, 1=>2); 
+
+//unsafe but basic
+
+//$sql = "SELECT * from Post where author = '$author' ";
+
+//positional parameters
+
+$sql = "select * from post where author = ?, ?"
+$statement = $pdo-> prepare ($sql);
+$statement -> execute([$user, $password]);
+
+$posts = $statement -> fetchAll();
+
+var_dump($posts); // show all data in the statement'
+
+forEach ($posts as $post){
+echo $post -> $title;
+
+}
+
+//named parameters
+
+$sql = "select * from post where author = :author"
+$statement = $pdo-> prepare ($sql);
+$statement -> execute(['author' => $user]);
